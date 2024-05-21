@@ -84,7 +84,7 @@
     .pokemon-card {
       background-color: white;
       border: 4px solid #ffcb05;
-      padding: 20px;
+      padding: 15px;
       margin: 10px;
       width: 370px;
       height: 520px;
@@ -129,6 +129,6 @@
     }
   
     .custom-pagination .v-pagination__item {
-      color: #00d1d8;
+      color: #d3c500;
     }
   </style>

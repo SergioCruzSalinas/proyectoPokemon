@@ -1,25 +1,19 @@
 <template>
-    
-    <div>
-        
-        <div class="filtro">
-            <PokemonFilter @update-search-term="handleUpdateSearchTerm" />
-
-        </div>
-      <div class="fondo">
-
-        <PokemonList :pokemons="pokemons" :filteredPokemons="pokemonsFilters" />
-
-      </div>
-
+  <div>
+    <div class="filtro">
+      <PokemonFilter @update-search-term="handleUpdateSearchTerm" />
     </div>
-  </template>
-  
-  <script>
+    <div class="fondo">
+      <PokemonList :pokemons="pokemons" :filteredPokemons="pokemonsFilters" />
+    </div>
+  </div>
+</template>
+
+<script>
   import PokemonFilter from '/src/components/PokemonFilter.vue';
   import PokemonList from '/src/components/PokemonList.vue';
   import axios from 'axios';
-  
+
   export default {
     components: {
       PokemonList,
@@ -41,13 +35,13 @@
           this.pokemonsFilters = [...this.pokemons];
           return;
         }
-  
+
         filterTerm = filterTerm.toLowerCase();
-  
+
         let pokemonsWithFilter = this.pokemons.filter(
           (pokemon) => pokemon.name.toLowerCase().includes(filterTerm) || parseInt(filterTerm) === pokemon.id
         );
-  
+
         this.pokemonsFilters = [...pokemonsWithFilter];
       },
       handleUpdateSearchTerm(filterTerm) {
@@ -89,29 +83,31 @@
       },
     },
   };
-  </script>
+</script>
 
-  <style>
-  .fondo{
-  margin-top: -65px;
-  background-image: url("/src/img/imagen.png");
-  background-size: auto;
-  background-repeat: repeat;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+<style>
+  .fondo {
+    margin-top: -65px;
+    background-image: url('/src/img/imagen.png');
+    background-size: auto;
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-ul{
-  display: flex;
-}
+  ul {
+    display: flex;
+  }
 
-  .filtro{
+  .filtro {
     font-size: 40px;
     margin-left: 14.8rem;
     list-style: none;
     margin-top: 1rem;
+    margin-left: -20px;
+    margin-bottom: 75px;
   }
-  </style>
+</style>

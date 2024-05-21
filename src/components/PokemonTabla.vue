@@ -1,16 +1,20 @@
 <template>
-  <v-card title="Pokemon" flat>
+  <v-card title="" flat>
     <template v-slot:text>
       <v-text-field
         v-model="search"
-        label="Filtrar por nombre"
+        label="Filtrar por ID, nombre o tipo"
         prepend-inner-icon="mdi-magnify"
         variant="outlined"
         hide-details
         single-line></v-text-field>
     </template>
 
-    <v-data-table :headers="headers" :items="pokemonsFilters" :search="search"></v-data-table>
+    <v-data-table :headers="headers" :items="pokemonsFilters" :search="search">
+      <template v-slot:item.img="{ item }">
+        <img :src="item.img" alt="Imagen de Pokémon" width="100" height="100" />
+      </template>
+    </v-data-table>
   </v-card>
 </template>
 
@@ -24,9 +28,16 @@
         pokemons: [], // Aquí almacenaremos los datos de los Pokémon
         pokemonsFilters: [], // Los Pokémon filtrados se mostrarán aquí
         headers: [
-          { key: 'name', title: 'Nombre' },
-          { key: 'types', title: 'Tipos' },
           { key: 'id', title: 'ID' },
+          { key: 'name', title: 'Nombre' },
+          { key: 'img', title: 'Imagen' },
+          { key: 'types', title: 'Tipos' },
+          { key: 'salud', title: 'Salud' },
+          { key: 'ataque', title: 'Ataque' },
+          { key: 'defensa', title: 'Defensa' },
+          { key: 'velocidad', title: 'Velocidad' }
+
+
         ],
       };
     },
@@ -46,6 +57,10 @@
                 id: pokemonResponse.data.id,
                 types: pokemonResponse.data.types.map((typeInfo) => typeInfo.type.name),
                 img: pokemonResponse.data.sprites.front_default,
+                salud: pokemonResponse.data.stats[0].base_stat,
+                ataque: pokemonResponse.data.stats[1].base_stat,
+                defensa: pokemonResponse.data.stats[2].base_stat,
+                velocidad: pokemonResponse.data.stats[5].base_stat,
               });
             })
           );
@@ -77,3 +92,9 @@
     },
   };
 </script>
+
+<style>
+.custom-table .v-data-table__wrapper {
+  overflow-x: auto;
+}
+</style>

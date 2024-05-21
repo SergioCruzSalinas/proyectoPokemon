@@ -58,7 +58,6 @@
                 name: this.capitalizarPrimeraLetra(pokemonResponse.data.name),
                 id: pokemonResponse.data.id,
                 types: pokemonResponse.data.types.map((typeInfo) => typeInfo.type.name),
-                img: pokemonResponse.data.sprites.front_default,
                 salud: pokemonResponse.data.stats[0].base_stat,
                 ataque: pokemonResponse.data.stats[1].base_stat,
                 defensa: pokemonResponse.data.stats[2].base_stat,

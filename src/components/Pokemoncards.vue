@@ -85,17 +85,18 @@
 </script>
 
 <style>
-  .fondo {
-    margin-top: -65px;
-    background-image: url('/src/img/imagen.png');
-    background-size: auto;
-    background-repeat: repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.fondo {
+  background-color: white;
+  margin-top: -65px;
+  background-image: url("/src/img/imagen.png");
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
   ul {
     display: flex;

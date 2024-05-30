@@ -33,6 +33,7 @@
     }
   
     .filtro {
+      background-color: white;
       color: #000;
       text-align: center;
       font-family: 'Times New Roman', Times, serif;

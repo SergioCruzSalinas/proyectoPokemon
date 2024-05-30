@@ -76,7 +76,7 @@
   </script>
   
   <style>
-    .pokemon-layout {
+  .pokemon-layout {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
@@ -131,4 +131,6 @@
     .custom-pagination .v-pagination__item {
       color: #d3c500;
     }
+
+
   </style>

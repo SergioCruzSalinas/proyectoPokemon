@@ -79,7 +79,7 @@
   <style>
   
     .boton {
-      color: yellow;
+      color: red;
       background-color: white;
       border-radius: 2px;
       margin-right: 3px;

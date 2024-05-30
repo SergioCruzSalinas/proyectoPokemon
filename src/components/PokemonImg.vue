@@ -42,7 +42,7 @@
   
   <style>
     .botonImg {
-      color: yellow;
+      color: red;
       background-color: white;
       border-radius: 2px;
       padding-left: 30px;

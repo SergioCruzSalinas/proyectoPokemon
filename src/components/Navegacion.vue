@@ -55,6 +55,19 @@ ul {
   list-style: none;
 }
 
+.menu a{
+  padding: 5px;
+  color:blue;
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: none;
+}
+
+.menu a:hover{
+  color:red;
+  font-size:40px ;
+}
+
 .icono {
   height: 100px;
   width: 100px;

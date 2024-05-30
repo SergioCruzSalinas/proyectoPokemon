@@ -13,7 +13,7 @@
           <PokemonImg :pokemon="pokemon" />
         </div>
       </div>
-      <div>
+      <div class="paginacion">
         <v-pagination
           v-model="currentPage"
           :length="totalPages"
@@ -114,22 +114,26 @@
     }
   
     .nombre {
-      color: #ffcb05;
+      color: #ff0505;
       text-shadow: -1px -1px 0 #007acc, 1px -1px 0 #007acc, -1px 1px 0 #007acc, 1px 1px 0 #007acc;
       font-size: 34px;
     }
   
     .id {
-      font-size: 20px;
+      font-size: 25px;
     }
   
     .tipo {
-      font-size: 20px;
+      font-size: 25px;
       padding-bottom: 9px;
     }
   
     .custom-pagination .v-pagination__item {
       color: #d3c500;
+    }
+
+    .paginacion{
+      background-color: rgb(240, 108, 19);
     }
 
 
